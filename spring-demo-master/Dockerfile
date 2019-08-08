@@ -1,7 +1,5 @@
-FROM centos
-RUN  yum -y install wget
-COPY spring-demo-0.0.1-SNAPSHOT.jar /home/
-RUN wget -P /home/ --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.rpm 
-RUN rpm -ivh /home/jdk-8u201-linux-x64.rpm
-EXPOSE 8080
+FROM openjdk:8-jre-alpine
+VOLUME /tmp
+COPY /home/vsts/work/1/s/target/spring-demo-0.0.1-SNAPSHOT-spring-boot.jar app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
