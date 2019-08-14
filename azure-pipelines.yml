@@ -21,7 +21,7 @@ steps:
     goals: 'package -Dmaven.test.skip=true'
 - task: PublishPipelineArtifact@1
   inputs:
-    path: $(System.DefaultWorkingDirectory)/bin/WebApp
+    path: $(System.DefaultWorkingDirectory)/target/spring-demo-0.0.1-SNAPSHOT-spring-boot.jar
     artifact: WebApp
 - task: Docker@2
   displayName: Build and Push
