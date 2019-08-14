@@ -18,7 +18,18 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
+<repositories>
+  <repository>
+  <id>dev-azure-com-m1050477-m1050477</id>
+  <url>https://pkgs.dev.azure.com/M1050477/_packaging/M1050477/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+</repositories>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
